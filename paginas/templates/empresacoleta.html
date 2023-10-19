@@ -1,0 +1,68 @@
+{% extends 'modelo.html' %}
+
+{% block titulo %}
+<title>Empresas de Coleta</title>
+{% endblock %}
+
+{% block destaque %}
+<h1 class="display-1 fw-bolder text-white mb-2"> Empresas de Coleta:</h1>
+<p class="display-8 fw-bolder text-white mb-2">Abaixo você pode verificar a empresa, o endereço, contatos para escolher a melhor opção para coletar seu lixo eletronico.</p>
+{% endblock %}
+
+{% block conteudo %}
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Empresas para coleta
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Empresa</th>
+                    <th>Endereço</th>
+                    <th>Bairro</th>
+                    <th>CEP</th>
+                    <th>Telefone</th>
+                    <th>Site</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Empresa</th>
+                    <th>Endereço</th>
+                    <th>Bairro</th>
+                    <th>CEP</th>
+                    <th>Telefone</th>
+                    <th>Site</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td>Reciclo info sales</td>
+                    <td>Rua Otavio de Moura , 63</td>
+                    <td>Vila Carolina</td>
+                    <td>02724-000</td>
+                    <td>+55 11 93145-2164 </td>
+                    <td>Pendente</td>
+                </tr>
+                <tr>
+                    <td>Sobreira - Reciclagem de lixo eletronico</td>
+                    <td>Rua de triunfo, 203 </td>
+                    <td>Santa Efigênia</td>
+                    <td>01212-010</td>
+                    <td>(11) 97796-0596</td>
+                    <td>Pendente</td>
+                </tr>
+                <tr>
+                    <td>Sucata Digital  - OBS usar como base</td>
+                    <td>Rua Templários, 192</td>
+                    <td>Vila Formosa</td>
+                    <td>03357-000</td>
+                    <td>(11)2604-2273 /(11) 95768-2368</td>
+                    <td>https://sucatadigital.com.br/</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
