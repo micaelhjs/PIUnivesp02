@@ -1,0 +1,26 @@
+{% extends 'modelo.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block titulo %}
+<title>Agendar Coleta</title>
+{% endblock %}
+{% block destaque %}
+<h1 class="display-1 fw-bolder text-white mb-2"> Cadastrar Região:</h1>
+<p class="display-8 fw-bolder text-white mb-2">Abaixo você pode uma nova região para ser atendida por empresas que coletam ou recebem descarte de lixo eletronico. </p>
+{% endblock %}
+{% block conteudo %}
+<p class="lead">
+    Preencha todos os campos obrigatórios.
+</p>
+<hr>
+
+<form action="" method="post">
+    
+    {% csrf_token %}
+
+    {{ form|crispy }}
+
+    <button type="submit" class="btn btn-primary mt-3">Cadastrar</button>
+</form>
+{% endblock %}

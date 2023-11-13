@@ -1,0 +1,47 @@
+{% extends 'modelo.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Lista de empresas</title>
+{% endblock %}
+{% block destaque %}
+<h3 class="display-1 fw-bolder text-white mb-2"> Lista de empresas cadastradas.</h3>
+{% endblock %}
+{% block conteudo %}
+
+<a href="{% url 'cadastrar-empresa' %}" class="btn btn-outline-success fw-bolder"> Cadastrar Empresa</a>
+<div class="table-responsive">
+<table class="table table-striped">
+    <tr>
+        <th>Empresa</th>
+        <th>Endereço</th>
+        <th>Região</th>
+        <th>Telefone</th>
+        <th>Site</th>
+        <th>Coleta</th>
+        <th>Descarte</th>
+    </tr>
+    {% for empresa in object_list %}
+    <tr>
+        <td>{{ empresa.nome }}</td>
+        <td>{{ empresa.endereco }}</td>
+        <td>{{ empresa.regiao }}</td>
+        <td>{{ empresa.telefone }}</td>
+        <td>{{ empresa.site }}</td>
+        <td>{{ empresa.coleta }}</td>
+        <td>{{ empresa.descarte }}</td>
+        <td>
+            <a href="{% url 'editar-empresa' empresa.pk %}" class="btn btn-warning btn-sm">Editar</a>
+            <a href="{% url 'deletar-empresa' empresa.pk %}"class="btn btn-danger btn-sm">Excluir</a>
+        </td>
+    </tr>
+
+    {% empty %}
+    <tr>
+        <td colspan="3">Nenhuma empresa cadastrada.</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}

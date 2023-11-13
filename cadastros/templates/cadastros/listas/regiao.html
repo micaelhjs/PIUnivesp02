@@ -1,0 +1,36 @@
+{% extends 'modelo.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Lista de Regiões</title>
+{% endblock %}
+{% block destaque %}
+<h3 class="display-1 fw-bolder text-white mb-2"> Lista de regiões com empresas cadastradas.</h3>
+{% endblock %}
+{% block conteudo %}
+<a href="{% url 'cadastrar-regiao' %}" class="btn btn-outline-success fw-bolder"> Cadastrar Região</a>
+<div class="table-responsive">
+<table class="table table-striped">
+    <tr>
+        <th>Região</th>
+        <th>Opções</th>
+    </tr>
+
+    {% for regiao in object_list %}
+    <tr>
+        <td>{{ regiao.nome }}</td>
+        <td>
+            <a href="{% url 'editar-regiao' regiao.pk %}" class="btn btn-warning btn-sm">Editar</a>
+            <a href="{% url 'deletar-regiao' regiao.pk %}"class="btn btn-danger btn-sm">Excluir</a>
+        </td>
+    </tr>
+
+    {% empty %}
+    <tr>
+        <td colspan="3">Nenhuma região cadastrada.</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}

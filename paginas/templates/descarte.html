@@ -5,11 +5,21 @@
 {% endblock %}
 
 {% block destaque %}
-<h1 class="display-1 fw-bolder text-white mb-2"> Você quer:</h1>
-<h2 class="display-8 fw-bolder text-white mb-2">Descobrir Locais de descarte</h2>
-<h2 class="display-8 fw-bolder text-white mb-2">Agendar descarte</h2>
-<h2 class="display-8 fw-bolder text-white mb-2">Ver Histórico de descarte</h2>
+<h1 class="display-1 fw-bolder text-white mb-2"> Você Precisa:</h1>
 {% endblock %}
 
 {% block conteudo %}
+<div class="d-grid col-md-10 mx-auto">
+    <h5 class="display-8 fw-bolder text-black mb-5 mx-auto">Descobrir locais para fazer o descarte do seu lixo eletrônico corretamente próximo a você?</h5>
+    <h5 class="display-8 fw-bolder text-black mb-5 mx-auto">Agendar o descarte do seu lixo eletrônico?</h5>
+    <h5 class="display-8 fw-bolder text-black mb-5 mx-auto">Controlar o histórico de descarte de lixo da sua empresa ou residência?</h5>
+    <h5 class="display-8 fw-bolder text-black mb-3 mx-auto ">Cadastre-se no link abaixo e acesse nosso banco de dados de forma gratuita.</h5>
+    <div class="d-grid gap-2 col-6 mx-auto">
+    <a class="btn btn-outline-primary btn-lg mb-3 mx-auto" href="#">Novo Usuário</a>
+    </div>
+    <h5 class="display-8 fw-bolder text-black mb-3 mx-auto">Você já tem cadastro? Então faça login para usurfluir dos nossos serviços.</h5>
+    <div class="d-grid gap-2 col-6 mx-auto">
+    <a class="btn btn-outline-success btn-lg mb-3 mx-auto" href="{% url 'login' %}">Login</a>
+    </div>
+    </div>
 {% endblock %}

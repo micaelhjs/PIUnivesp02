@@ -27,9 +27,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         <!-- Menu Lateral-->
+        {% if request.user.is_authenticated %}
               <div class="offcanvas offcanvas-start text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
                 <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">EcoTech</h5>
+                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><img src="{% static 'img/Logo EcoTech.png' %}" alt="Logo" height="35" class="d-inline-block align-text-top"></h5>
                   <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -71,6 +72,31 @@
                   </ul>
                 </div>
               </div>
+              {% else %}
+              
+              <div class="offcanvas offcanvas-start text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><img src="{% static 'img/Logo EcoTech.png' %}" alt="Logo" height="35" class="d-inline-block align-text-top"></h5>
+                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Início</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link " href="{% url 'coleta' %}">Coleta</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="{% url 'descarte' %}">Descarte</a>
+                      </li>
+                  </ul>
+                </div>
+              </div>
+              {% endif %}
         <!-- Barra de pesquisa -->
         <form class="d-flex ms-auto ms-md-8 me-2c" role="Pesquisar">
           <input class="form-control me-2" type="Pesquisar" placeholder="Pesquisar" aria-label="Pesquisar">
@@ -80,15 +106,28 @@
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Menu de Usuário/configurações--> 
           <ul class="navbar-nav ms-auto ms-md-5 me-3 me-lg-5">
+
+            {% if request.user.is_authenticated %}
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fas fa-user fa-fw"></i>{{ request.user }}
+                </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!">Configurações</a></li>
                     <li><a class="dropdown-item" href="#!">Histórico</a></li>
                     <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#!">Sair</a></li>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}">Sair</a></li>
                 </ul>
             </li>
+            {% else %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sign-in"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="{% url 'login' %}">Fazer Login</a></li>
+                    <li><a class="dropdown-item" href="#">Novo Usuário</a></li>
+                </ul>
+            </li>
+            {% endif %}
         </ul>
             </div>
           </nav>
