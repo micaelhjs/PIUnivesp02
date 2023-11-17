@@ -47,11 +47,11 @@
                       </a>
                       <ul class="dropdown-menu dropdown-menu-dark">
                         <li><a class="dropdown-item" href="{% url 'empresacoleta' %}">Empresas de Coleta</a></li>
-                        <li><a class="dropdown-item" href="{% url 'agendarcoleta' %}">Agendar Coleta</a></li>
+                        <li><a class="dropdown-item" href="{% url 'cadastrar-coleta' %}">Agendar Coleta</a></li>
                         <li>
                           <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="{% url 'historicocoleta' %}">Histórico</a></li>
+                        <li><a class="dropdown-item" href="{% url 'listar-coleta' %}">Histórico</a></li>
                       </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -60,17 +60,20 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
                           <li><a class="dropdown-item" href="{% url 'localdescarte' %}">Locais de Descarte</a></li>
-                          <li><a class="dropdown-item" href="{% url 'agendardescarte' %}">Agendar Descarte</a></li>
+
+                          <li><a class="dropdown-item" href="{% url 'cadastrar-descarte' %}">Agendar Descarte</a></li>
                           <li>
                             <hr class="dropdown-divider">
                           </li>
-                          <li><a class="dropdown-item" href="{% url 'historicodescarte' %}">Histórico
+                          <li><a class="dropdown-item" href="{% url 'listar-descarte' %}">Histórico
 
                           </a></li>
                         </ul>
                       </li>
-                  </ul>
-                </div>
+                  
+                  <li class="nav-item"><a class="nav-link" href="{% url 'listar-empresa' %}">Empresas Parceiras</a></li>
+                </ul>
+              </div>
               </div>
               {% else %}
               
@@ -124,7 +127,7 @@
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-sign-in"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="{% url 'login' %}">Fazer Login</a></li>
-                    <li><a class="dropdown-item" href="#">Novo Usuário</a></li>
+                    <li><a class="dropdown-item" href="{% url 'registrar' %}">Novo Usuário</a></li>
                 </ul>
             </li>
             {% endif %}
@@ -151,7 +154,7 @@
 
                                 </div>
                             </div>
-                            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
+                            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="{% static 'img/Home.jpg' %}" alt="..." /></div>
                             {% endblock %}
                         </div>
                     </div>

@@ -3,10 +3,10 @@
 {% load crispy_forms_tags %}
 
 {% block titulo %}
-<title>Login</title>
+<title>formulario</title>
 {% endblock %}
 {% block destaque %}
-<h4 class="display-1 fw-bolder text-white mb-2"> Fazer Login:</h4>>
+<h4 class="display-1 fw-bolder text-white mb-2"> {{titulo}} </h4>>
 {% endblock %}
 {% block conteudo %}
 <p class="lead">
@@ -22,7 +22,13 @@
 
          {{ form|crispy }}
 
-        <button type="submit" class="btn btn-primary mt-3">Entrar</button>
+        <button type="submit" class="btn btn-primary mt-3">
+            {% autoescape off %}
+            {{ icone }}
+           {% endautoescape %}
+            {{ botao }}
+
+        </button>
         </form>
     </div>
 </div>

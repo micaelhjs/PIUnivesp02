@@ -1,0 +1,43 @@
+{% extends 'modelo.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Histórico de Descartes</title>
+{% endblock %}
+{% block destaque %}
+<h3 class="display-1 fw-bolder text-white mb-2">Histórico de Descartes {{ request.user }}.</h3>
+{% endblock %}
+{% block conteudo %}
+
+<a href="{% url 'cadastrar-descarte' %}" class="btn btn-outline-success fw-bolder"> Agendar Descarte</a>
+<div class="table-responsive">
+<table class="table table-striped">
+    <tr>
+        <th>Data</th>
+        <th>Descrição do Material</th>
+        <th>Empresa Escolhida</th>
+        <th>Endereço</th>
+        <th>Contato</th>
+    </tr>
+    {% for AgendamentoDescarte in object_list %}
+    <tr>
+        <td>{{ AgendamentoDescarte.data }}</td>
+        <td>{{ AgendamentoDescarte.descricao }}</td>
+        <td>{{ AgendamentoDescarte.empresa.nome }}</td>
+        <td>{{ AgendamentoDescarte.empresa.endereco }}</td>
+        <td>{{ AgendamentoDescarte.empresa.telefone }}</td>
+        <td>
+            <a href="{% url 'editar-descarte' AgendamentoDescarte.pk %}" class="btn btn-warning btn-sm">Editar</a>
+            <a href="{% url 'deletar-descarte' AgendamentoDescarte.pk %}"class="btn btn-danger btn-sm">Excluir</a>
+        </td>
+    </tr>
+
+    {% empty %}
+    <tr>
+        <td colspan="3">Nenhum Agendamento cadastrado.</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}

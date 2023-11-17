@@ -12,10 +12,7 @@ class ColetaView(TemplateView):
 
 class EmpresaColetaView(TemplateView):
     template_name = "empresacoleta.html"
-
-class AgendarColetaView(TemplateView):
-    template_name = "agendarcoleta.html"
-
+    
 class HistoricoColetaView(TemplateView):
     template_name = "historicocoleta.html"
 
@@ -24,9 +21,6 @@ class DescarteView(TemplateView):
 
 class LocalDescarteView(TemplateView):
     template_name = "localdescarte.html"
-
-class AgendarDescarteView(TemplateView):
-    template_name = "agendardescarte.html"
 
 class HistoricoDescarteView(TemplateView):
     template_name = "historicodescarte.html"

@@ -1,0 +1,45 @@
+{% extends 'modelo.html' %}
+{% load static %}
+
+{% block titulo %}
+<title>Histórico de Coletas</title>
+{% endblock %}
+{% block destaque %}
+<h3 class="display-1 fw-bolder text-white mb-2"> Histórico de Coletas {{ request.user }}.</h3>
+{% endblock %}
+{% block conteudo %}
+
+<a href="{% url 'cadastrar-coleta' %}" class="btn btn-outline-success fw-bolder"> Agendar Coleta</a>
+<div class="table-responsive">
+<table class="table table-striped">
+    <tr>
+        <th>Data</th>
+        <th>Descrição do Material</th>
+        <th>Local da Coleta</th>
+        <th>Empresa Escolhida</th>
+        <th>Endereço</th>
+        <th>Contato</th>
+    </tr>
+    {% for AgendamentoColeta in object_list %}
+    <tr>
+        <td>{{ AgendamentoColeta.data }}</td>
+        <td>{{ AgendamentoColeta.descricao }}</td>
+        <td>{{ AgendamentoColeta.local }}</td>
+        <td>{{ AgendamentoColeta.empresa.nome }}</td>
+        <td>{{ AgendamentoColeta.empresa.endereco }}</td>
+        <td>{{ AgendamentoColeta.empresa.telefone }}</td>
+        <td>
+            <a href="{% url 'editar-coleta' AgendamentoColeta.pk %}" class="btn btn-warning btn-sm">Editar</a>
+            <a href="{% url 'deletar-coleta' AgendamentoColeta.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+        </td>
+    </tr>
+
+    {% empty %}
+    <tr>
+        <td colspan="3">Nenhum Agendamento cadastrado.</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}
