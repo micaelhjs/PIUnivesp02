@@ -24,3 +24,9 @@ class LocalDescarteView(TemplateView):
 
 class HistoricoDescarteView(TemplateView):
     template_name = "historicodescarte.html"
+    
+class BlogPostView(TemplateView):
+    template_name = "blogpost.html"
+
+class BlogPostView2(TemplateView):
+    template_name = "blogpost2.html"

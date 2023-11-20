@@ -1,6 +1,5 @@
 from django.urls import path
-from .views import IndexView, BlogView, ColetaView,EmpresaColetaView, HistoricoColetaView, DescarteView, LocalDescarteView, HistoricoDescarteView
-
+from .views import IndexView, BlogView, ColetaView,EmpresaColetaView, HistoricoColetaView, DescarteView, LocalDescarteView, HistoricoDescarteView,BlogPostView,BlogPostView2
 urlpatterns = [
     #Modelo de criação de url: path('endereco/',NomedaView.as.view(),name='nome_da_url'),
     path('',IndexView.as_view(), name='index'), #Pagina Inicial
@@ -11,4 +10,6 @@ urlpatterns = [
     path('descarte/', DescarteView.as_view(), name='descarte'),
     path('descarte/localdescarte',LocalDescarteView.as_view(), name='localdescarte'),
     path('descarte/historidescarte',HistoricoDescarteView.as_view(), name='historicodescarte'),
+    path('blogpost/', BlogPostView.as_view(), name='blogpost'), #Blog
+    path('blogpost2/', BlogPostView2.as_view(), name='blogpost2'), #Blog
 ]

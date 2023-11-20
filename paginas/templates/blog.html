@@ -6,7 +6,93 @@
 {% endblock %}
 
 {%block destaque %}
+
 {% endblock %}
 
 {% block conteudo %}
-{% endblock %}
+<div class="text-center">
+  <h1 class="display-5">EcoBlog </h1>
+  <br>
+  <p class="lead text-justify">
+    Confira nossas ecoPostagens e mantenha-se informado!
+  </p>
+
+<div>
+ 
+
+  <div class="container px-4 text-center">
+    <div class="row gx-5">
+      <div class="col">
+        <div class="p-2 ">
+
+          <div class="card col" style="width: 100%;">
+            <img src="{% static 'img/fundocard.png' %}" class="card-img-top" alt="teste" width="100%" height="30px">
+            <div class="card-body">
+              <h5 class="card-title">Processo de reciclagem</h5>
+              <p class="card-text lead ">Confira o processo de ressiclagem de lixo eletronico.</p>
+              <a href="{{ '/blogpost' }}" class="btn btn-primary">Quero saber mais</a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-2 ">
+
+          <div class="card col" style="width: 100%;">
+            <img src="{% static 'img/fundocard.png' %}" class="card-img-top" alt="teste" width="100%" height="30px">
+            <div class="card-body">
+              <h5 class="card-title">Impactos ambientais</h5>
+              <p class="card-text lead">Entenda um pouco sobre os impactos ambientais.</p>
+              <a href="{{ '/blogpost2' }}" class="btn btn-primary">Quero saber mais</a>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container px-4 text-center">
+    <div class="row gx-5">
+      <div class="col ">
+        <div class="p-2 ">
+
+
+
+          <div class="card col" style="width: 100%;">
+            <img src="{% static 'img/fundocard.png' %}" class="card-img-top" alt="teste" width="100%" height="30px">
+            <div class="card-body">
+              <h5 class="card-title">Recondicionamento e Reuso</h5>
+              <p class="card-text lead">Como podemos reutilizar o equipamento eletronico ? </p>
+              <a href="#" class="btn btn-primary">Quero saber mais</a>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+      <div class="col">
+        <div class="p-2 ">
+
+          <div class="card col" style="width: 100%;">
+            <img src="{% static 'img/fundocard.png' %}" class="card-img-top " alt="teste" width="100%" height="30px">
+            <div class="card-body">
+              <h5 class="card-title">Desafios e Soluções:</h5>
+              <p class="card-text lead">Confira um pouco sobre as melhores soluções desenvolvidas.</p>
+              <a href="#" class="btn btn-primary">Quero saber mais</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </div>
+
+
+    {% endblock %}
